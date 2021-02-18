@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gui.ReturningUserController">
+   <children>
+      <Label alignment="CENTER" layoutX="194.0" layoutY="37.0" prefHeight="63.0" prefWidth="211.0" text="INVENTORY PROGRAM LOG IN" textAlignment="CENTER" />
+      <Label layoutX="123.0" layoutY="142.0" text="EMPLOYEE ID:" />
+      <Label layoutX="132.0" layoutY="200.0" text="PASSWORD:" />
+      <TextField fx:id="employeeID" layoutX="226.0" layoutY="138.0" promptText="Employee ID" />
+      <PasswordField fx:id="password" layoutX="226.0" layoutY="196.0" promptText="Password" />
+      <Button fx:id="logInButton" layoutX="272.0" layoutY="296.0" mnemonicParsing="false" onAction="#logInButtonOnAction" text="LOG IN" />
+      <Label fx:id="logInLabel" alignment="CENTER" layoutX="30.0" layoutY="244.0" prefHeight="35.0" prefWidth="539.0" textAlignment="CENTER" />
+      <Button fx:id="exitButton" layoutX="281.0" layoutY="340.0" mnemonicParsing="false" onAction="#exitButtonOnAction" text="EXIT" />
+   </children>
+</AnchorPane>

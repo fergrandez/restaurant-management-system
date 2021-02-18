@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="557.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gui.AdminAccessController">
+   <children>
+      <AnchorPane layoutX="17.0" layoutY="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="631.0">
+         <children>
+            <Label layoutX="117.0" layoutY="250.0" text="Select an inventory to view from the dropdown menu to view its items." />
+            <MenuButton layoutY="34.0" mnemonicParsing="false" text="INVENTORIES">
+              <items>
+                <MenuItem fx:id="foodMenuItem" mnemonicParsing="false" onAction="#foodOnAction" text="Food" />
+                <MenuItem fx:id="drinkMenuItem" mnemonicParsing="false" onAction="#drinkOnAction" text="Drink" />
+                  <MenuItem fx:id="equipmentMenuItem" mnemonicParsing="false" onAction="#equipmentOnAction" text="Equipment" />
+              </items>
+            </MenuButton>
+            <TableView fx:id="tableView" layoutX="116.0" layoutY="34.0" prefHeight="213.0" prefWidth="500.0">
+              <columns>
+                  <TableColumn fx:id="itemTypeColumn" prefWidth="75.0" text="ITEM TYPE" />
+                <TableColumn fx:id="idColumn" onEditCommit="#changeItemIDCellEvent" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="nameColumn" onEditCommit="#changeItemNameCellEvent" prefWidth="75.0" text="NAME" />
+                  <TableColumn fx:id="quantityColumn" onEditCommit="#changeItemQuantityCellEvent" prefWidth="75.0" text="QUANTITY" />
+                  <TableColumn fx:id="priceColumn" onEditCommit="#changeItemPriceCellEvent" prefWidth="75.0" text="PRICE" />
+                  <TableColumn fx:id="expirationDateColumn" prefWidth="75.0" text="EXP. DATE" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="46.0" layoutY="9.0" prefHeight="17.0" prefWidth="540.0" text="ADMINISTRATOR ACCESS" />
+            <Label fx:id="errorLabel" layoutX="117.0" layoutY="287.0" prefHeight="17.0" prefWidth="500.0" text="Double click the property of an item or employee you would like to edit to change it." />
+            <TextField fx:id="itemName" layoutY="61.0" prefHeight="25.0" prefWidth="105.0" promptText="Name" />
+            <TextField fx:id="itemID" layoutY="88.0" prefHeight="25.0" prefWidth="105.0" promptText="Item ID" />
+            <TextField fx:id="itemQuantity" layoutY="115.0" prefHeight="25.0" prefWidth="105.0" promptText="Quantity" />
+            <TextField fx:id="itemPrice" layoutY="142.0" prefHeight="25.0" prefWidth="105.0" promptText="Price" />
+            <Button fx:id="addItemButton" layoutY="196.0" mnemonicParsing="false" onAction="#addItemButtonOnAction" prefHeight="25.0" prefWidth="105.0" text="ADD ITEM" />
+            <Button fx:id="deleteItemButton" layoutY="222.0" mnemonicParsing="false" onAction="#deleteItemButtonOnAction" prefHeight="25.0" prefWidth="105.0" text="DELETE ITEM" />
+            <Label layoutX="117.0" layoutY="268.0" text="Select an item from an inventory and click the 'DELETE ITEM' button to remove it." />
+            <DatePicker fx:id="itemExpirationDate" layoutY="169.0" prefHeight="25.0" prefWidth="105.0" promptText="Exp. Date" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="logOutButton" alignment="CENTER" layoutX="14.0" layoutY="521.0" mnemonicParsing="false" onAction="#logOutButtonOnAction" text="LOG OUT" />
+      <Button fx:id="deleteEmployeeButton" layoutX="14.0" layoutY="430.0" mnemonicParsing="false" onAction="#deleteEmployeeButtonOnAction" text="DELETE EMPLOYEE" />
+      <Button fx:id="addEmployeeButton" layoutX="14.0" layoutY="403.0" mnemonicParsing="false" onAction="#addEmployeeButtonOnAction" prefHeight="25.0" prefWidth="115.0" text="ADD EMPLOYEE" />
+      <TableView fx:id="employeeTableView" layoutX="134.0" layoutY="322.0" prefHeight="133.0" prefWidth="500.0">
+        <columns>
+          <TableColumn fx:id="employeeNameColumn" onEditCommit="#changeEmployeeNameCellEvent" prefWidth="98.0" text="NAME" />
+          <TableColumn fx:id="employeeIDColumn" onEditCommit="#changeEmployeeIDCellEvent" prefWidth="72.66670227050781" text="ID" />
+            <TableColumn fx:id="employeePositionColumn" onEditCommit="#changeEmployeePositionCellEvent" prefWidth="82.66668701171875" text="POSITION" />
+        </columns>
+      </TableView>
+      <TextField fx:id="employeeName" layoutX="15.0" layoutY="322.0" prefHeight="25.0" prefWidth="111.0" promptText="Name" />
+      <TextField fx:id="employeeID" layoutX="15.0" layoutY="349.0" prefHeight="25.0" prefWidth="111.0" promptText="Employee ID" />
+      <TextField fx:id="employeePosition" layoutX="16.0" layoutY="376.0" prefHeight="25.0" prefWidth="111.0" promptText="Position" />
+      <Label layoutX="134.0" layoutY="477.0" prefHeight="25.0" prefWidth="474.0" text="Select an employee from the table and click the 'DELETE' button to remove them. " />
+      <Label fx:id="messageLabel" layoutX="134.0" layoutY="462.0" text="Enter a new employee's information and click 'ADD EMPLOYEE' to add them to the roster." />
+   </children>
+</AnchorPane>

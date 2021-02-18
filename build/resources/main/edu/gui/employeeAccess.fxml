@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gui.EmployeeAccessController">
+   <children>
+      <Button fx:id="logOutButton" alignment="CENTER" layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#logOutButtonOnAction" text="LOG OUT" />
+      <Label fx:id="inventoryLabel" layoutX="113.0" layoutY="287.0" text="Select an inventory to view from the dropdown menu to view its items." />
+      <MenuButton layoutX="6.0" layoutY="34.0" mnemonicParsing="false" text="INVENTORIES">
+        <items>
+          <MenuItem fx:id="foodMenuItem" mnemonicParsing="false" onAction="#foodOnAction" text="Food" />
+          <MenuItem fx:id="drinkMenuItem" mnemonicParsing="false" onAction="#drinkOnAction" text="Drink" />
+            <MenuItem fx:id="equipmentMenuItem" mnemonicParsing="false" onAction="#equipmentOnAction" text="Equipment" />
+        </items>
+      </MenuButton>
+      <TableView fx:id="tableView" layoutX="117.0" layoutY="34.0" prefHeight="200.0" prefWidth="476.0">
+        <columns>
+            <TableColumn fx:id="itemTypeColumn" prefWidth="75.0" text="ITEM TYPE" />
+          <TableColumn fx:id="idColumn" onEditCommit="#changeIDCellEvent" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nameColumn" onEditCommit="#changeNameCellEvent" prefWidth="75.0" text="NAME" />
+            <TableColumn fx:id="quantityColumn" onEditCommit="#changeQuantityCellEvent" prefWidth="75.0" text="QUANTITY" />
+            <TableColumn fx:id="priceColumn" onEditCommit="#changePriceCellEvent" prefWidth="75.0" text="PRICE" />
+            <TableColumn fx:id="expirationDateColumn" prefWidth="75.0" text="EXP. DATE" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="30.0" layoutY="9.0" prefHeight="17.0" prefWidth="540.0" text="EMPLOYEE ACCESS" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="10.0" layoutY="314.0" prefHeight="17.0" prefWidth="580.0" text="Double click the property of an item you would like to edit to change it." />
+      <Label fx:id="accessLabel" alignment="CENTER" layoutX="188.0" layoutY="360.0" prefHeight="25.0" prefWidth="223.0" />
+      <Label fx:id="editLabel" alignment="CENTER" layoutX="6.0" layoutY="108.0" prefHeight="125.0" prefWidth="105.0" />
+   </children>
+</AnchorPane>
